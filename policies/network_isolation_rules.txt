@@ -1,0 +1,2 @@
+SECURITY INTENT: 
+To maintain a robust Defense in Depth strategy, our production environment must be isolated from the guest Wi-Fi network. No traffic from the 'Guest_VLAN' should be allowed to reach the 'Production_Server_Subnet' via any port. Specifically, administrative ports like 22 (SSH) and 3389 (RDP) must be strictly blocked for non-IT subnets.

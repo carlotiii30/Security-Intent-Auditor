@@ -1,0 +1,2 @@
+SECURITY INTENT: 
+Data classified as 'Restricted' or 'Highly Confidential' must never be stored in plain text. Any technical configuration must ensure that such data is encrypted at rest using industry-standard algorithms. Access to this data requires multi-factor authentication (MFA) and must be logged for auditing purposes (Accountability).

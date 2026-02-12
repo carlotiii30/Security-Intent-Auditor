@@ -1,0 +1,2 @@
+SECURITY INTENT: 
+In alignment with the Principle of Least Privilege, only users assigned to the 'HR_Manager' role are authorized to have 'Write' and 'Delete' permissions on the Payroll database. All other employees, including IT Support, should have 'Read-Only' access or no access at all to protect employee confidentiality (CIA Triad).
