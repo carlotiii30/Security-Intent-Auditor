@@ -1,0 +1,16 @@
+{
+  "resource": "Payroll_Database",
+  "access_control_list": [
+    {
+      "subject": "carlota_admin",
+      "role": "HR_Manager",
+      "permissions": ["Read", "Write", "Delete"]
+    },
+    {
+      "subject": "temp_intern_dev",
+      "role": "IT_Support",
+      "permissions": ["Read", "Write"], 
+      "note": "Temporary access granted for debugging"
+    }
+  ]
+}

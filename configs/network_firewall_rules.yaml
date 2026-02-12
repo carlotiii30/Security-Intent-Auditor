@@ -1,0 +1,15 @@
+firewall_rules:
+  - id: 101
+    name: "Allow_Web_Traffic"
+    source: "Any"
+    destination: "Production_Server"
+    port: 80
+    action: "Allow"
+
+  - id: 102
+    name: "Guest_to_Prod_Admin"
+    source: "Guest_VLAN"
+    destination: "Production_Server_Subnet"
+    port: 22
+    protocol: "SSH"
+    action: "Allow"
