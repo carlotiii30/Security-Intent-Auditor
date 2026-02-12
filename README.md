@@ -32,4 +32,4 @@ In modern IT environments, there is often a "translation gap" between security p
 * `requirements.txt`: Project dependencies.
 
 ---
-*Created as a practical application of the ISC2 CC certification to solve real-world IT security challenges.* [cite: 1, 3, 4, 5]
+*Created as a practical application of the ISC2 CC certification to solve real-world IT security challenges.*
