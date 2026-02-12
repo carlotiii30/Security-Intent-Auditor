@@ -1,6 +1,6 @@
 # Security Policies Repository 📋
 
-This directory contains the **Administrative Security Policies** that define the "Security Intent" of the organization. These documents serve as the ground truth for the **Sentinel-AI** auditor.
+This directory contains the **Administrative Security Policies** that define the "Security Intent" of the organization. These documents serve as the ground truth for the auditor.
 
 ## 🛡️ Governance Framework
 
