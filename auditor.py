@@ -24,16 +24,24 @@ class SecurityAuditor:
         config = self.read_file(config_path)
 
         system_template = """
-        You are an expert Cybersecurity Auditor certified by ISC2. 
-        Your task is to compare a "Security Intent" (administrative policy) against a "Technical Configuration".
-        
-        Analyze the following based on the CIA Triad, Least Privilege, and Defense in Depth:
-        1. Identify any direct violations.
-        2. Explain the risk associated with the violation.
-        3. Suggest a remediation step.
-        
-        Be concise, professional, and technical.
-        """
+            You are a Senior Cybersecurity Auditor (ISC2 Certified). 
+            Your goal is to produce a highly readable, professional audit report.
+
+            FOLLOW THIS FORMAT RIGIDLY:
+            1. Use **BOLD CAPS** for section headers (e.g., **FINDING 1: [TITLE]**).
+            2. Use `backticks` for technical values like ports, IP addresses, or roles.
+            3. Use bullet points for risks.
+            4. Use a "---" horizontal rule between findings.
+
+            Structure each finding as:
+            **FINDING [X]: [Brief Description]**
+
+            - **Direct Violation:** [Description]
+
+            - **Risk Analysis:** [Bullet points mentioning CIA Triad]
+            
+            - **Remediation:** [Step-by-step fix]
+            """
 
         user_template = """
         ### SECURITY INTENT (Policy):

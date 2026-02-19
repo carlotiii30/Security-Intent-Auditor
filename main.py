@@ -32,10 +32,24 @@ def run_security_audit_demo():
         print(Fore.BLUE + "-" * 40)
 
         try:
-            report = auditor.audit(case["policy"], case["config"])
-            print(Fore.GREEN + report)
+            report = auditor.audit(case['policy'], case['config'])
+            
+            for line in report.split('\n'):
+                if "FINDING" in line:
+                    print(Fore.YELLOW + Style.BRIGHT + line)
+                elif "Violation" in line:
+                    print(Fore.RED + line)
+                elif "Risk" in line:
+                    print(Fore.MAGENTA + line)
+                elif "Remediation" in line:
+                    print(Fore.CYAN + Style.BRIGHT + line)
+                elif "---" in line:
+                    print(Fore.BLUE + line)
+                else:
+                    print(Fore.WHITE + line)
+                    
         except Exception as e:
-            print(f"{Fore.RED}❌ Error during audit: {e}")
+            print(f"{Fore.RED}❌ Error: {e}")
 
         print(Fore.BLUE + "-" * 60)
 

@@ -19,8 +19,8 @@ In modern IT environments, there is often a "translation gap" between security p
 
 - **Language:** Python 3.10+
 - **AI Orchestration:** LangChain
-- **LLM Integration:** OpenAI / Anthropic / Local LLMs
-- **Security Framework:** Grounded in **ISC2 CC** standards (Access Control & Security Operations).
+- **LLM Integration:** **Google Gemini (2.5 Flash)** via Google AI Studio 🚀
+- **Security Framework:** Grounded in **ISC2 CC** standards.
 
 ## 📖 How it Works
 
@@ -45,12 +45,45 @@ This project uses **Poetry** for dependency management.
    ```bash
    poetry install
    ```
-2. **Set up environment variables:** Create a `.env` file and add your `OPENAI_API_KEY`.
+2. **Set up environment variables:** Create a `.env` file and add your `GOOGLE_API_KEY`.
 
 3. **Run the demo:**
    ```bash
    poetry run python main.py
    ```
+
+## 🔍 Showcase: Audit Examples
+
+The project includes three pre-configured scenarios to demonstrate the AI's auditing capabilities. Each scenario pairs an **Administrative Policy** with a **Technical Configuration**.
+
+### 1. Identity & Access Management (IAM)
+
+- **Policy:** `hr_access_intent.txt` (Focuses on **Least Privilege**).
+- **Technical Config:** `iam_payroll_config.json`.
+- **Audit Goal:** Detect if non-HR roles (like IT Support) have unauthorized write access to sensitive payroll data.
+
+### 2. Network Security & Segmentation
+
+- **Policy:** `network_isolation_rules.txt` (Focuses on **Defense in Depth**).
+- **Technical Config:** `network_firewall_rules.yaml`.
+- **Audit Goal:** Identify firewall leaks where a Guest VLAN might be able to reach Production servers via SSH (Port 22).
+
+### 3. Data Protection Standards
+
+- **Policy:** `data_protection_standards.txt` (Focuses on **Confidentiality**).
+- **Audit Goal:** Verify if "Highly Confidential" data assets are backed by the required encryption and MFA settings.
+
+## 📊 Sample Output
+
+When running `poetry run python main.py`, the auditor generates real-time reports like this:
+
+> **FINDING: UNAUTHORIZED WRITE PERMISSIONS**
+>
+> - **Violation:** User `temp_intern_dev` (IT_Support) has `Write` access to `Payroll_Database`.
+> - **Risk:** High risk to **Integrity** and **Confidentiality**.
+> - **Remediation:** Revoke write permissions and implement a "break-glass" procedure for debugging.
+
+![demo](demo.png)
 
 ---
 
