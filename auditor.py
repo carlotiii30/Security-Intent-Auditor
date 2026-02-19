@@ -1,16 +1,22 @@
 import os
-from langchain_openai import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 
 load_dotenv()
 
+
 class SecurityAuditor:
     def __init__(self):
-        self.llm = ChatOpenAI(model="gpt-4-turbo", temperature=0)
+        self.llm = ChatGoogleGenerativeAI(
+            model="gemini-2.5-flash",
+            temperature=0,
+            google_api_key=os.getenv("GOOGLE_API_KEY"),
+        )
 
     def read_file(self, file_path):
-        with open(file_path, 'r') as f:
+        with open(file_path, "r") as f:
             return f.read()
 
     def audit(self, policy_path, config_path):
@@ -28,7 +34,7 @@ class SecurityAuditor:
         
         Be concise, professional, and technical.
         """
-        
+
         user_template = """
         ### SECURITY INTENT (Policy):
         {policy}
@@ -39,12 +45,11 @@ class SecurityAuditor:
         ### AUDIT REPORT:
         """
 
-        prompt = ChatPromptTemplate.from_messages([
-            ("system", system_template),
-            ("user", user_template)
-        ])
+        prompt = ChatPromptTemplate.from_messages(
+            [("system", system_template), ("user", user_template)]
+        )
 
         chain = prompt | self.llm
         response = chain.invoke({"policy": policy, "config": config})
-        
+
         return response.content
