@@ -8,7 +8,7 @@ This is a security tool designed to bridge the gap between high-level administra
 ## 🛰️ The Sentinel Ecosystem
 This tool is part of a modular security suite designed for automated governance:
 * **Sentinel Auditor** (This repo): Detective control that audits existing configurations.
-* **[Sentinel Architect](https://github.com/carlotiii30/Sentinel-Auditor)**: Preventive control that generates secure IaC from natural language.
+* **[Sentinel Architect](https://github.com/carlotiii30/Sentinel-Architect)**: Preventive control that generates secure IaC from natural language.
 
 ---
 
