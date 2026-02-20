@@ -1,6 +1,14 @@
-# Sentinel Auditor 🛡️🤖
+# Sentinel Auditor 🛡️🤖 
+*(Part of the Sentinel Security Suite)*
 
 This is a security tool designed to bridge the gap between high-level administrative policies and technical configurations. By leveraging **Large Language Models (LLMs)** and **LangChain**, this tool audits whether technical implementations align with the original security intent of an organization.
+
+---
+
+## 🛰️ The Sentinel Ecosystem
+This tool is part of a modular security suite designed for automated governance:
+* **Sentinel Auditor** (This repo): Detective control that audits existing configurations.
+* **[Sentinel Architect](https://github.com/carlotiii30/Sentinel-Auditor)**: Preventive control that generates secure IaC from natural language.
 
 ---
 
@@ -51,6 +59,8 @@ This project uses **Poetry** for dependency management.
    ```bash
    poetry run python main.py
    ```
+
+---
 
 ## 🔍 Showcase: Audit Examples
 
