@@ -1,4 +1,4 @@
-# Intent-Based Security Auditor 🛡️🤖
+# Sentinel Auditor 🛡️🤖
 
 This is a security tool designed to bridge the gap between high-level administrative policies and technical configurations. By leveraging **Large Language Models (LLMs)** and **LangChain**, this tool audits whether technical implementations align with the original security intent of an organization.
 
