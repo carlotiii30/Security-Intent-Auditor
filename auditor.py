@@ -19,10 +19,7 @@ class SentinelAuditor:
         with open(file_path, "r") as f:
             return f.read()
 
-    def audit(self, policy_path, config_path):
-        policy = self.read_file(policy_path)
-        config = self.read_file(config_path)
-
+    def audit_text(self, policy_content, config_content):
         system_template = """
             You are a Senior Cybersecurity Auditor (ISC2 Certified). 
             Your goal is to produce a highly readable, professional audit report.
@@ -58,6 +55,10 @@ class SentinelAuditor:
         )
 
         chain = prompt | self.llm
-        response = chain.invoke({"policy": policy, "config": config})
-
+        response = chain.invoke({"policy": policy_content, "config": config_content})
         return response.content
+
+    def audit(self, policy_path, config_path):
+        policy = self.read_file(policy_path)
+        config = self.read_file(config_path)
+        return self.audit_text(policy, config)
